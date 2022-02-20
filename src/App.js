@@ -1,23 +1,28 @@
 import logo from './logo.svg';
+import ReactGallery from 'reactive-blueimp-gallery';
 import './App.css';
+
+const images = [{
+  source: 'assets/banana.jpg',
+}, {
+  source: 'assets/banana.jpg',
+}, {
+  source: 'assets/banana.jpg',
+}];
+
+const options = {
+  startSlideshow: true,
+  slideshowInterval: 2000,
+  continuous: true,
+  carousel: true,
+};
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactGallery 
+        source={images} 
+        options={options} />
     </div>
   );
 }
